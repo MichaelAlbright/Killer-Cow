@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: deb75272139201e42bb3ccbb32d7dba7
-timeCreated: 1495842849
+timeCreated: 1496006483
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -126,8 +126,8 @@ TextureImporter:
     21300238: roguelikeSheet_transparent_119
     21300240: roguelikeSheet_transparent_120
     21300242: roguelikeSheet_transparent_121
-    21300244: roguelikeSheet_transparent_122
-    21300246: roguelikeSheet_transparent_123
+    21300244: wood vert
+    21300246: wood hor
     21300248: roguelikeSheet_transparent_124
     21300250: roguelikeSheet_transparent_125
     21300252: roguelikeSheet_transparent_126
@@ -183,8 +183,8 @@ TextureImporter:
     21300352: roguelikeSheet_transparent_176
     21300354: roguelikeSheet_transparent_177
     21300356: roguelikeSheet_transparent_178
-    21300358: roguelikeSheet_transparent_179
-    21300360: roguelikeSheet_transparent_180
+    21300358: wood vert broke
+    21300360: wood hor broke
     21300362: roguelikeSheet_transparent_181
     21300364: roguelikeSheet_transparent_182
     21300366: roguelikeSheet_transparent_183
@@ -368,7 +368,7 @@ TextureImporter:
     21300722: roguelikeSheet_transparent_361
     21300724: roguelikeSheet_transparent_362
     21300726: roguelikeSheet_transparent_363
-    21300728: roguelikeSheet_transparent_364
+    21300728: wide door right
     21300730: roguelikeSheet_transparent_365
     21300732: roguelikeSheet_transparent_366
     21300734: roguelikeSheet_transparent_367
@@ -422,8 +422,8 @@ TextureImporter:
     21300830: roguelikeSheet_transparent_415
     21300832: roguelikeSheet_transparent_416
     21300834: roguelikeSheet_transparent_417
-    21300836: roguelikeSheet_transparent_418
-    21300838: roguelikeSheet_transparent_419
+    21300836: wide door left lock
+    21300838: wide door right lock
     21300840: roguelikeSheet_transparent_420
     21300842: roguelikeSheet_transparent_421
     21300844: roguelikeSheet_transparent_422
@@ -475,8 +475,8 @@ TextureImporter:
     21300936: roguelikeSheet_transparent_468
     21300938: roguelikeSheet_transparent_469
     21300940: roguelikeSheet_transparent_470
-    21300942: roguelikeSheet_transparent_471
-    21300944: roguelikeSheet_transparent_472
+    21300942: wide door left open
+    21300944: wide door right open
     21300946: roguelikeSheet_transparent_473
     21300948: roguelikeSheet_transparent_474
     21300950: roguelikeSheet_transparent_475
@@ -1198,8 +1198,8 @@ TextureImporter:
     21302382: roguelikeSheet_transparent_1191
     21302384: roguelikeSheet_transparent_1192
     21302386: roguelikeSheet_transparent_1193
-    21302388: roguelikeSheet_transparent_1194
-    21302390: roguelikeSheet_transparent_1195
+    21302388: grey roof left short back
+    21302390: grey roof right short back
     21302392: roguelikeSheet_transparent_1196
     21302394: roguelikeSheet_transparent_1197
     21302396: roguelikeSheet_transparent_1198
@@ -1253,8 +1253,8 @@ TextureImporter:
     21302492: roguelikeSheet_transparent_1246
     21302494: roguelikeSheet_transparent_1247
     21302496: roguelikeSheet_transparent_1248
-    21302498: roguelikeSheet_transparent_1249
-    21302500: roguelikeSheet_transparent_1250
+    21302498: grey roof mid left
+    21302500: grey roof mid right
     21302502: roguelikeSheet_transparent_1251
     21302504: roguelikeSheet_transparent_1252
     21302506: roguelikeSheet_transparent_1253
@@ -1307,8 +1307,8 @@ TextureImporter:
     21302600: roguelikeSheet_transparent_1300
     21302602: roguelikeSheet_transparent_1301
     21302604: roguelikeSheet_transparent_1302
-    21302606: roguelikeSheet_transparent_1303
-    21302608: roguelikeSheet_transparent_1304
+    21302606: grey roof left short front
+    21302608: grey roof right short front
     21302610: roguelikeSheet_transparent_1305
     21302612: roguelikeSheet_transparent_1306
     21302614: roguelikeSheet_transparent_1307
@@ -3360,7 +3360,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_122
+      name: wood vert
       rect:
         serializedVersion: 2
         x: 136
@@ -3373,7 +3373,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_123
+      name: wood hor
       rect:
         serializedVersion: 2
         x: 153
@@ -4101,7 +4101,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_179
+      name: wood vert broke
       rect:
         serializedVersion: 2
         x: 136
@@ -4114,7 +4114,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_180
+      name: wood hor broke
       rect:
         serializedVersion: 2
         x: 153
@@ -6506,7 +6506,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_364
+      name: wide door right
       rect:
         serializedVersion: 2
         x: 527
@@ -7208,7 +7208,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_418
+      name: wide door left lock
       rect:
         serializedVersion: 2
         x: 510
@@ -7221,7 +7221,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_419
+      name: wide door right lock
       rect:
         serializedVersion: 2
         x: 527
@@ -7897,7 +7897,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_471
+      name: wide door left open
       rect:
         serializedVersion: 2
         x: 510
@@ -7910,7 +7910,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_472
+      name: wide door right open
       rect:
         serializedVersion: 2
         x: 527
@@ -17296,7 +17296,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1194
+      name: grey roof left short back
       rect:
         serializedVersion: 2
         x: 493
@@ -17309,7 +17309,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1195
+      name: grey roof right short back
       rect:
         serializedVersion: 2
         x: 510
@@ -18011,7 +18011,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1249
+      name: grey roof mid left
       rect:
         serializedVersion: 2
         x: 459
@@ -18024,7 +18024,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1250
+      name: grey roof mid right
       rect:
         serializedVersion: 2
         x: 476
@@ -18713,7 +18713,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1303
+      name: grey roof left short front
       rect:
         serializedVersion: 2
         x: 493
@@ -18726,7 +18726,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1304
+      name: grey roof right short front
       rect:
         serializedVersion: 2
         x: 510
