@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (dialogueActive && Input.GetButtonDown("Jump")) {
+		if (dialogueActive && Input.GetButtonUp("Jump")) {
 //			dBox.SetActive (false);
 //			dialogueActive = false;
 			currentLine++;

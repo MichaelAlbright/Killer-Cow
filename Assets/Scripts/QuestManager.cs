@@ -11,6 +11,8 @@ public class QuestManager : MonoBehaviour {
 
 	public string itemCollected;
 
+	public string enemyKilled;
+
 	// Use this for initialization
 	void Start () {
 		questCompleted = new bool[quests.Length];
