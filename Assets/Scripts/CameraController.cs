@@ -26,6 +26,13 @@ public class CameraController : MonoBehaviour {
 		} else {
 			Destroy (gameObject);
 		}
+
+		if (boundBox == null) {
+			boundBox = FindObjectOfType<Bounds> ().GetComponent<BoxCollider2D>();
+			minBounds = boundBox.bounds.min;
+			maxBounds = boundBox.bounds.max;
+		}
+
 		minBounds = boundBox.bounds.min;
 		maxBounds = boundBox.bounds.max;
 
@@ -38,6 +45,12 @@ public class CameraController : MonoBehaviour {
 	void Update () {
 		targetPos = new Vector3 (followTarget.transform.position.x, followTarget.transform.position.y, transform.position.z);
 		transform.position = Vector3.Lerp (transform.position, targetPos, moveSpeed * Time.deltaTime);
+
+		if (boundBox == null) {
+			boundBox = FindObjectOfType<Bounds> ().GetComponent<BoxCollider2D>();
+			minBounds = boundBox.bounds.min;
+			maxBounds = boundBox.bounds.max;
+		}
 
 		float clampedX = Mathf.Clamp (transform.position.x, minBounds.x + halfWidth, maxBounds.x - halfWidth);
 		float clampedY = Mathf.Clamp (transform.position.y, minBounds.y + halfHeight, maxBounds.y - halfHeight);

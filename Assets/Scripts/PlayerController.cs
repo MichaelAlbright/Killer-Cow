@@ -25,10 +25,13 @@ public class PlayerController : MonoBehaviour {
 
 	public bool canMove;
 
+	private SFXManager sfxMan;
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		myRigidbody = GetComponent<Rigidbody2D> ();
+		sfxMan = FindObjectOfType<SFXManager> ();
 
 		if (!playerExists) {
 			playerExists = true;
@@ -90,6 +93,8 @@ public class PlayerController : MonoBehaviour {
 				attacking = true;
 				myRigidbody.velocity = Vector2.zero;
 				anim.SetBool ("Attack", true);
+
+				sfxMan.playerAttack.Play();
 			}
 
 //			if (Mathf.Abs (Input.GetAxisRaw ("Horizontal")) > 0.1f && Mathf.Abs (Input.GetAxisRaw ("Vertical")) > 0.1f) {

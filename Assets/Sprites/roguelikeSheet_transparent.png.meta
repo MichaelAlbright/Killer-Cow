@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: deb75272139201e42bb3ccbb32d7dba7
-timeCreated: 1496006483
+timeCreated: 1496094505
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -532,11 +532,11 @@ TextureImporter:
     21301050: roguelikeSheet_transparent_525
     21301052: roguelikeSheet_transparent_526
     21301054: roguelikeSheet_transparent_527
-    21301056: roguelikeSheet_transparent_528
-    21301058: roguelikeSheet_transparent_529
-    21301060: roguelikeSheet_transparent_530
-    21301062: roguelikeSheet_transparent_531
-    21301064: roguelikeSheet_transparent_532
+    21301056: gems
+    21301058: gems teal
+    21301060: gems purple
+    21301062: gems gold
+    21301064: gems orange
     21301066: roguelikeSheet_transparent_533
     21301068: roguelikeSheet_transparent_534
     21301070: roguelikeSheet_transparent_535
@@ -600,8 +600,8 @@ TextureImporter:
     21301186: roguelikeSheet_transparent_593
     21301188: roguelikeSheet_transparent_594
     21301190: roguelikeSheet_transparent_595
-    21301192: roguelikeSheet_transparent_596
-    21301194: roguelikeSheet_transparent_597
+    21301192: silver coins small
+    21301194: gold coins small
     21301196: tent1
     21301198: tent2
     21301200: roguelikeSheet_transparent_600
@@ -651,11 +651,11 @@ TextureImporter:
     21301288: roguelikeSheet_transparent_644
     21301290: roguelikeSheet_transparent_645
     21301292: roguelikeSheet_transparent_646
-    21301294: roguelikeSheet_transparent_647
-    21301296: roguelikeSheet_transparent_648
-    21301298: roguelikeSheet_transparent_649
-    21301300: roguelikeSheet_transparent_650
-    21301302: roguelikeSheet_transparent_651
+    21301294: gold pile small
+    21301296: gold pile med
+    21301298: gold pile big
+    21301300: silver coins big
+    21301302: gold coins big
     21301304: tent3
     21301306: tent4
     21301308: roguelikeSheet_transparent_654
@@ -8638,7 +8638,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_528
+      name: gems
       rect:
         serializedVersion: 2
         x: 544
@@ -8651,7 +8651,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_529
+      name: gems teal
       rect:
         serializedVersion: 2
         x: 561
@@ -8664,7 +8664,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_530
+      name: gems purple
       rect:
         serializedVersion: 2
         x: 578
@@ -8677,7 +8677,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_531
+      name: gems gold
       rect:
         serializedVersion: 2
         x: 595
@@ -8690,7 +8690,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_532
+      name: gems orange
       rect:
         serializedVersion: 2
         x: 612
@@ -9522,7 +9522,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_596
+      name: silver coins small
       rect:
         serializedVersion: 2
         x: 748
@@ -9535,7 +9535,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_597
+      name: gold coins small
       rect:
         serializedVersion: 2
         x: 765
@@ -10185,7 +10185,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_647
+      name: gold pile small
       rect:
         serializedVersion: 2
         x: 697
@@ -10198,7 +10198,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_648
+      name: gold pile med
       rect:
         serializedVersion: 2
         x: 714
@@ -10211,7 +10211,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_649
+      name: gold pile big
       rect:
         serializedVersion: 2
         x: 731
@@ -10224,7 +10224,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_650
+      name: silver coins big
       rect:
         serializedVersion: 2
         x: 748
@@ -10237,7 +10237,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_651
+      name: gold coins big
       rect:
         serializedVersion: 2
         x: 765
