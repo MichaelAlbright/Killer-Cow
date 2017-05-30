@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: deb75272139201e42bb3ccbb32d7dba7
-timeCreated: 1496094505
+timeCreated: 1496170731
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -28,7 +28,7 @@ TextureImporter:
     21300042: roguelikeSheet_transparent_21
     21300044: roguelikeSheet_transparent_22
     21300046: roguelikeSheet_transparent_23
-    21300048: roguelikeSheet_transparent_24
+    21300048: barrel
     21300050: roguelikeSheet_transparent_25
     21300052: roguelikeSheet_transparent_26
     21300054: roguelikeSheet_transparent_27
@@ -351,10 +351,10 @@ TextureImporter:
     21300688: roguelikeSheet_transparent_344
     21300690: roguelikeSheet_transparent_345
     21300692: roguelikeSheet_transparent_346
-    21300694: roguelikeSheet_transparent_347
-    21300696: roguelikeSheet_transparent_348
-    21300698: roguelikeSheet_transparent_349
-    21300700: roguelikeSheet_transparent_350
+    21300694: crate green
+    21300696: crate big red yellow
+    21300698: crate big green red
+    21300700: crate big yellow green
     21300702: roguelikeSheet_transparent_351
     21300704: roguelikeSheet_transparent_352
     21300706: roguelikeSheet_transparent_353
@@ -406,9 +406,9 @@ TextureImporter:
     21300798: roguelikeSheet_transparent_399
     21300800: roguelikeSheet_transparent_400
     21300802: roguelikeSheet_transparent_401
-    21300804: roguelikeSheet_transparent_402
-    21300806: roguelikeSheet_transparent_403
-    21300808: roguelikeSheet_transparent_404
+    21300804: crate red
+    21300806: crate yellow
+    21300808: crate empty
     21300810: roguelikeSheet_transparent_405
     21300812: roguelikeSheet_transparent_406
     21300814: roguelikeSheet_transparent_407
@@ -1223,9 +1223,9 @@ TextureImporter:
     21302432: roguelikeSheet_transparent_1216
     21302434: roguelikeSheet_transparent_1217
     21302436: roguelikeSheet_transparent_1218
-    21302438: roguelikeSheet_transparent_1219
-    21302440: roguelikeSheet_transparent_1220
-    21302442: roguelikeSheet_transparent_1221
+    21302438: rock1
+    21302440: rock2
+    21302442: rock3
     21302444: roguelikeSheet_transparent_1222
     21302446: roguelikeSheet_transparent_1223
     21302448: roguelikeSheet_transparent_1224
@@ -2086,7 +2086,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_24
+      name: barrel
       rect:
         serializedVersion: 2
         x: 408
@@ -6285,7 +6285,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_347
+      name: crate green
       rect:
         serializedVersion: 2
         x: 238
@@ -6298,7 +6298,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_348
+      name: crate big red yellow
       rect:
         serializedVersion: 2
         x: 255
@@ -6311,7 +6311,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_349
+      name: crate big green red
       rect:
         serializedVersion: 2
         x: 272
@@ -6324,7 +6324,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_350
+      name: crate big yellow green
       rect:
         serializedVersion: 2
         x: 289
@@ -7000,7 +7000,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_402
+      name: crate red
       rect:
         serializedVersion: 2
         x: 221
@@ -7013,7 +7013,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_403
+      name: crate yellow
       rect:
         serializedVersion: 2
         x: 238
@@ -7026,7 +7026,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_404
+      name: crate empty
       rect:
         serializedVersion: 2
         x: 255
@@ -17621,10 +17621,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1219
+      name: rock1
       rect:
         serializedVersion: 2
-        x: 918
+        x: 919
         y: 153
         width: 16
         height: 16
@@ -17634,7 +17634,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1220
+      name: rock2
       rect:
         serializedVersion: 2
         x: 935
@@ -17647,7 +17647,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1221
+      name: rock3
       rect:
         serializedVersion: 2
         x: 952

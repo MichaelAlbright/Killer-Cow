@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour {
 
-	private static bool mcExists;
+//	private static bool mcExists;
 
 	public AudioSource[] musicTracks;
 
@@ -13,14 +13,14 @@ public class MusicController : MonoBehaviour {
 	public bool musicCanPlay;
 
 	// Use this for initialization
-	void Start () {
-		if (!mcExists) {
-			mcExists = true;
-			DontDestroyOnLoad (transform.gameObject);
-		} else {
-			Destroy (gameObject);
-		}
-	}
+//	void Start () {
+//		if (!mcExists) {
+//			mcExists = true;
+//			DontDestroyOnLoad (transform.gameObject);
+//		} else {
+//			Destroy (gameObject);
+//		}
+//	}
 	
 	// Update is called once per frame
 	void Update () {

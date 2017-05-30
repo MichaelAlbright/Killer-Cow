@@ -25,6 +25,9 @@ public class VillagerMovement : MonoBehaviour {
 	public bool canMove;
 	private DialogueManager theDM;
 
+	public bool tutorialNPC;
+	private bool tutorialNPCEnd;
+
 	// Use this for initialization
 	void Start () {
 		myRigidbody = GetComponent<Rigidbody2D> ();
@@ -41,14 +44,29 @@ public class VillagerMovement : MonoBehaviour {
 			hasWalkZone = true;
 		}
 
-		canMove = true;
+		if (tutorialNPC) {
+			canMove = false;
+			tutorialNPCEnd = false;
+		} else {
+			canMove = true;
+			tutorialNPCEnd = true;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (!theDM.dialogueActive) {
+		if (!theDM.dialogueActive && !tutorialNPC) {
 			canMove = true;
+		}
+
+		if (theDM.dialogueActive && tutorialNPC) {
+			tutorialNPCEnd = true;
+		}
+
+		if (tutorialNPCEnd && tutorialNPC) {
+			tutorialNPC = false;
+			walkDirection = 0;
 		}
 
 		if (!canMove) {

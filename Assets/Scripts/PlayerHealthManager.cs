@@ -30,7 +30,7 @@ public class PlayerHealthManager : MonoBehaviour {
 		if (playerCurrentHealth <= 0) {
 //			gameObject.SetActive (false);
 			sfxMan.playerDead.Play();
-			Application.LoadLevel ("dead");
+			Application.LoadLevel ("Dead");
 			SetMaxHealth ();
 			//Respawn ();
 

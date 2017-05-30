@@ -14,7 +14,6 @@ public class LockedDoor : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator> ();
 		open = false;
-		unlocked = false;
 	}
 	
 	// Update is called once per frame
@@ -31,7 +30,7 @@ public class LockedDoor : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.gameObject.name == "Player" && !unlocked) {
+		if (other.gameObject.name == "Player" && unlocked) {
 			open = true;
 			anim.SetBool ("Open", open);
 		}
@@ -39,7 +38,7 @@ public class LockedDoor : MonoBehaviour {
 
 	void OnTriggerExit2D (Collider2D other)
 	{
-		if (other.gameObject.name == "Player" && !unlocked) {
+		if (other.gameObject.name == "Player" && unlocked) {
 			open = false;
 			anim.SetBool ("Open", open);
 		}

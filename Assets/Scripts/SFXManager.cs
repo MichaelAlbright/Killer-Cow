@@ -8,15 +8,15 @@ public class SFXManager : MonoBehaviour {
 	public AudioSource playerDead;
 	public AudioSource playerAttack;
 
-	private static bool sfxmanExists;
+//	private static bool sfxmanExists;
 
 	// Use this for initialization
-	void Start () {
-		if (!sfxmanExists) {
-			sfxmanExists = true;
-			DontDestroyOnLoad (transform.gameObject);
-		} else {
-			Destroy (gameObject);
-		}
-	}
+//	void Start () {
+//		if (!sfxmanExists) {
+//			sfxmanExists = true;
+//			DontDestroyOnLoad (transform.gameObject);
+//		} else {
+//			Destroy (gameObject);
+//		}
+//	}
 }
