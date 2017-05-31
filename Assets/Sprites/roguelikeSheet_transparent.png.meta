@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: deb75272139201e42bb3ccbb32d7dba7
-timeCreated: 1496170731
+timeCreated: 1496262456
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -981,10 +981,10 @@ TextureImporter:
     21301948: roguelikeSheet_transparent_974
     21301950: roguelikeSheet_transparent_975
     21301952: roguelikeSheet_transparent_976
-    21301954: roguelikeSheet_transparent_977
-    21301956: roguelikeSheet_transparent_978
-    21301958: roguelikeSheet_transparent_979
-    21301960: roguelikeSheet_transparent_980
+    21301954: bridge left
+    21301956: bridge mid
+    21301958: bridge right
+    21301960: bridge
     21301962: roguelikeSheet_transparent_981
     21301964: roguelikeSheet_transparent_982
     21301966: roguelikeSheet_transparent_983
@@ -14475,7 +14475,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_977
+      name: bridge left
       rect:
         serializedVersion: 2
         x: 578
@@ -14488,7 +14488,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_978
+      name: bridge mid
       rect:
         serializedVersion: 2
         x: 595
@@ -14501,7 +14501,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_979
+      name: bridge right
       rect:
         serializedVersion: 2
         x: 612
@@ -14514,7 +14514,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_980
+      name: bridge
       rect:
         serializedVersion: 2
         x: 629

@@ -19,9 +19,12 @@ public class QuestObject : MonoBehaviour {
 	public int enemiesToKill;
 	private int enemyKillCount;
 
+	private PlayerStats thePS;
+	public int exp;
+
 	// Use this for initialization
 	void Start () {
-		
+		thePS = FindObjectOfType<PlayerStats> ();
 	}
 	
 	// Update is called once per frame
@@ -55,6 +58,7 @@ public class QuestObject : MonoBehaviour {
 	{
 		theQM.ShowQuestText (endText);
 		theQM.questCompleted [questNumber] = true;
+		thePS.AddExperience (exp);
 		gameObject.SetActive (false);
 	}
 }

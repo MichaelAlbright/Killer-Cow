@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealthManager : MonoBehaviour {
 
@@ -14,6 +15,8 @@ public class EnemyHealthManager : MonoBehaviour {
 	public string enemyQuestName;
 	private QuestManager theQM;
 
+	public Slider enemyHealth;
+
 	// Use this for initialization
 	void Start () {
 		enemyCurrentHealth = enemyMaxHealth;
@@ -21,6 +24,8 @@ public class EnemyHealthManager : MonoBehaviour {
 		thePlayerStats = FindObjectOfType<PlayerStats> ();
 
 		theQM = FindObjectOfType<QuestManager> ();
+
+		enemyHealth.maxValue = enemyMaxHealth;
 	}
 
 	// Update is called once per frame
@@ -32,6 +37,7 @@ public class EnemyHealthManager : MonoBehaviour {
 
 			thePlayerStats.AddExperience (expToGive);
 		}
+		enemyHealth.value = enemyCurrentHealth;
 	}
 
 	public void HurtEnemy(int damageToGive)

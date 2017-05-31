@@ -9,8 +9,12 @@ public class UIManager : MonoBehaviour {
 	public Text HPText;
 	public PlayerHealthManager playerHealth;
 
-	private PlayerStats thePS;
+	public Slider levelBar;
 	public Text levelText;
+
+	private PlayerStats thePS;
+	public int currentLvl;
+	public int preveousLvl;
 
 //	private static bool UIExists;
 
@@ -27,9 +31,22 @@ public class UIManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		currentLvl = thePS.currentLevel;
+		if (currentLvl > 1) {
+			preveousLvl = currentLvl - 1;
+		} else {
+			preveousLvl = 0;
+		}
 		healthBar.maxValue = playerHealth.playerMaxHealth;
 		healthBar.value = playerHealth.playerCurrentHealth;
 		HPText.text = "HP: " + healthBar.value + "/" + healthBar.maxValue;
-		levelText.text = "Lvl: " + thePS.currentLevel;
+		levelText.text = "Lvl: " + thePS.currentLevel + " - " + (thePS.currentExp - thePS.toLevelUp [preveousLvl]) + "/" + (thePS.toLevelUp[currentLvl] - thePS.toLevelUp [preveousLvl]);
+		levelBar.maxValue = thePS.toLevelUp[currentLvl];
+		if (currentLvl > 1) {
+			levelBar.minValue = thePS.toLevelUp [preveousLvl];
+		} else {
+			levelBar.minValue = 0;
+		}
+		levelBar.value = thePS.currentExp;
 	}
 }
