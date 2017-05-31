@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour {
 	private Vector3 targetPos;
 	public float moveSpeed;
 
-	private static bool cameraExists;
+//	private static bool cameraExists;
 
 	public BoxCollider2D boundBox;
 	private Vector3 minBounds;
@@ -20,12 +20,12 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (!cameraExists) {
-			cameraExists = true;
-			DontDestroyOnLoad (transform.gameObject);
-		} else {
-			Destroy (gameObject);
-		}
+//		if (!cameraExists) {
+//			cameraExists = true;
+//			DontDestroyOnLoad (transform.gameObject);
+//		} else {
+//			Destroy (gameObject);
+//		}
 
 		if (boundBox == null) {
 			boundBox = FindObjectOfType<Bounds> ().GetComponent<BoxCollider2D>();

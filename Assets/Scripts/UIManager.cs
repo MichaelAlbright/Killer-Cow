@@ -12,16 +12,16 @@ public class UIManager : MonoBehaviour {
 	private PlayerStats thePS;
 	public Text levelText;
 
-	private static bool UIExists;
+//	private static bool UIExists;
 
 	// Use this for initialization
 	void Start () {
-		if (!UIExists) {
-			UIExists = true;
-			DontDestroyOnLoad (transform.gameObject);
-		} else {
-			Destroy (gameObject);
-		}
+//		if (!UIExists) {
+//			UIExists = true;
+//			DontDestroyOnLoad (transform.gameObject);
+//		} else {
+//			Destroy (gameObject);
+//		}
 		thePS = GetComponent<PlayerStats> ();
 	}
 	

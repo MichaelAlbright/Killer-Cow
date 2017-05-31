@@ -8,14 +8,30 @@ public class StartGame : MonoBehaviour {
 
 	public string sceneToLoad;
 
+	public GameObject playerStuff;
+
+	public string exitPoint;
+
+	private PlayerController thePlayer;
+
 	void Start ()
 	{
+		thePlayer = FindObjectOfType<PlayerController> ();
+
 		Button btn = start.GetComponent<Button> ();
 		btn.onClick.AddListener (TaskOnClick);
+		if (playerStuff == null) {
+			playerStuff = GameObject.FindWithTag ("Stuff");
+			playerStuff.SetActive (false);
+		}
 	}
 
 	void TaskOnClick()
 	{
 		Application.LoadLevel (sceneToLoad);
+
+		playerStuff.SetActive (true);
+
+		thePlayer.startPoint = exitPoint;
 	}
 }

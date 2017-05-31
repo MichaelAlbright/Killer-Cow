@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 	public Vector2 lastMove;
 	private Vector2 moveInput;
 
-	private static bool playerExists;
+//	private static bool playerExists;
 
 	private bool attacking;
 	public float attackTime;
@@ -33,12 +33,12 @@ public class PlayerController : MonoBehaviour {
 		myRigidbody = GetComponent<Rigidbody2D> ();
 		sfxMan = FindObjectOfType<SFXManager> ();
 
-		if (!playerExists) {
-			playerExists = true;
-			DontDestroyOnLoad (transform.gameObject);
-		} else {
-			Destroy (gameObject);
-		}
+//		if (!playerExists) {
+//			playerExists = true;
+//			DontDestroyOnLoad (transform.gameObject);
+//		} else {
+//			Destroy (gameObject);
+//		}
 
 		canMove = true;
 
