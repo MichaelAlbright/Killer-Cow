@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartGame : MonoBehaviour {
+public class ChangeScene : MonoBehaviour {
+
 	public Button start;
 
 	public string sceneToLoad;
@@ -14,34 +15,30 @@ public class StartGame : MonoBehaviour {
 
 	private PlayerController thePlayer;
 
-	private CursorManager theCM;
-
 	private SceneHolder theSH;
 
 	void Start ()
 	{
 		thePlayer = FindObjectOfType<PlayerController> ();
 
-		theCM = FindObjectOfType<CursorManager> ();
-
 		theSH = FindObjectOfType<SceneHolder> ();
 
 		Button btn = start.GetComponent<Button> ();
 		btn.onClick.AddListener (TaskOnClick);
+
 		if (playerStuff == null) {
 			playerStuff = GameObject.FindWithTag ("Stuff");
-			playerStuff.SetActive (false);
 		}
 	}
 
 	void TaskOnClick()
 	{
-		Application.LoadLevel (theSH.preveousScene);
-
-		playerStuff.SetActive (true);
+		Application.LoadLevel (sceneToLoad);
 
 		thePlayer.startPoint = exitPoint;
 
-		theCM.LockSet ();
+		if (!playerStuff.activeInHierarchy) {
+			playerStuff.SetActive (true);
+		}
 	}
 }

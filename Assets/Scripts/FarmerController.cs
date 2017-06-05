@@ -18,6 +18,11 @@ public class FarmerController : MonoBehaviour {
 
 	private Vector3 moveDirection;
 
+	public Collider2D walkZone;
+	private bool hasWalkZone;
+	private Vector2 minWalkPoint;
+	private Vector2 maxWalkPoint;
+
 	// Use this for initialization
 	void Start () {
 		myRigidbody = GetComponent<Rigidbody2D> ();
@@ -27,13 +32,28 @@ public class FarmerController : MonoBehaviour {
 
 		timeBetweenMoveCounter = Random.Range (timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
 		timeToMoveCounter = Random.Range (timeToMove * 0.75f, timeToMove * 1.25f);
+
+		if (walkZone != null) {
+			minWalkPoint = walkZone.bounds.min;
+			maxWalkPoint = walkZone.bounds.max;
+			hasWalkZone = true;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (moving) {
-			timeToMoveCounter -= Time.deltaTime;
-			myRigidbody.velocity = moveDirection;
+			if (hasWalkZone) {
+				timeToMoveCounter -= Time.deltaTime;
+				myRigidbody.velocity = moveDirection;
+				if (transform.position.y > maxWalkPoint.y || transform.position.x > maxWalkPoint.x || transform.position.y < minWalkPoint.y || transform.position.x < minWalkPoint.x) {
+					timeToMoveCounter = -1f;
+				}
+			} else {
+				timeToMoveCounter -= Time.deltaTime;
+				myRigidbody.velocity = moveDirection;
+			}
+
 
 			if (timeToMoveCounter < 0f) {
 				moving = false;

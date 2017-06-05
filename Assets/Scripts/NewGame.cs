@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartGame : MonoBehaviour {
+public class NewGame : MonoBehaviour {
+
 	public Button start;
 
 	public string sceneToLoad;
@@ -18,6 +19,8 @@ public class StartGame : MonoBehaviour {
 
 	private SceneHolder theSH;
 
+	private PlayerStats thePS;
+
 	void Start ()
 	{
 		thePlayer = FindObjectOfType<PlayerController> ();
@@ -25,6 +28,8 @@ public class StartGame : MonoBehaviour {
 		theCM = FindObjectOfType<CursorManager> ();
 
 		theSH = FindObjectOfType<SceneHolder> ();
+
+		thePS = FindObjectOfType<PlayerStats> ();
 
 		Button btn = start.GetComponent<Button> ();
 		btn.onClick.AddListener (TaskOnClick);
@@ -36,7 +41,14 @@ public class StartGame : MonoBehaviour {
 
 	void TaskOnClick()
 	{
-		Application.LoadLevel (theSH.preveousScene);
+		PlayerPrefs.DeleteKey("SaveScene");
+		PlayerPrefs.DeleteKey ("CurrentMoney");
+		PlayerPrefs.DeleteKey ("PlayerExp");
+
+		thePS.currentExp = 0;
+		thePS.currentLevel = 0;
+
+		Application.LoadLevel (sceneToLoad);
 
 		playerStuff.SetActive (true);
 

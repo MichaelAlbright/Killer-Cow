@@ -13,6 +13,7 @@ public class PlayerHealthManager : MonoBehaviour {
 	private SpriteRenderer playerSprite;
 
 	private SFXManager sfxMan;
+	private CursorManager theCM;
 
 //	public float respawnTime;
 
@@ -23,6 +24,9 @@ public class PlayerHealthManager : MonoBehaviour {
 		playerSprite = GetComponent<SpriteRenderer> ();
 
 		sfxMan = FindObjectOfType<SFXManager> ();
+
+
+		theCM = FindObjectOfType<CursorManager> ();
 	}
 	
 	// Update is called once per frame
@@ -30,6 +34,7 @@ public class PlayerHealthManager : MonoBehaviour {
 		if (playerCurrentHealth <= 0) {
 //			gameObject.SetActive (false);
 			sfxMan.playerDead.Play();
+			theCM.LockSet ();
 			Application.LoadLevel ("Dead");
 			SetMaxHealth ();
 			//Respawn ();

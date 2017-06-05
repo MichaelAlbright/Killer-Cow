@@ -8,11 +8,14 @@ public class PauseGame : MonoBehaviour {
 
 	private PlayerController move;
 
+	private CursorManager theCM;
+
 //	private static bool objectExists;
 
 	// Use this for initialization
 	void Start () {
 		move = FindObjectOfType<PlayerController> ();
+		theCM = FindObjectOfType<CursorManager> ();
 //		if (!objectExists) {
 //			objectExists = true;
 //			DontDestroyOnLoad (transform.gameObject);
@@ -39,5 +42,6 @@ public class PauseGame : MonoBehaviour {
 			Time.timeScale = 1;
 			move.canMove = true;
 		}
+		theCM.LockSet ();
 	}
 }

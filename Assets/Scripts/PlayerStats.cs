@@ -27,6 +27,10 @@ public class PlayerStats : MonoBehaviour {
 		currentDefence = defenceLevels [1];
 
 		thePlayerHealth = FindObjectOfType<PlayerHealthManager> ();
+
+		if (PlayerPrefs.HasKey ("PlayerExp")) {
+			currentExp = PlayerPrefs.GetInt ("PlayerExp");
+		}
 	}
 	
 	// Update is called once per frame
