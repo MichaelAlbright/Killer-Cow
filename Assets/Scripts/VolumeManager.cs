@@ -25,9 +25,21 @@ public class VolumeManager : MonoBehaviour {
 			vcObjects [i].SetAudioLevel (currentVolumeLevel);
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void ChangeVolume (int newVolume) {
+
+		currentVolumeLevel = newVolume;
+
+		if (currentVolumeLevel > maxVolume) {
+			currentVolumeLevel = maxVolume;
+		}
+
+		if (currentVolumeLevel < 0) {
+			currentVolumeLevel = 0;
+		}
+
+		for (int i = 0; i < vcObjects.Length; i++) {
+			vcObjects [i].SetAudioLevel (currentVolumeLevel);
+		}
 	}
 }
