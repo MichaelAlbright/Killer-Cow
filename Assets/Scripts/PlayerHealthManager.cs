@@ -14,6 +14,7 @@ public class PlayerHealthManager : MonoBehaviour {
 
 	private SFXManager sfxMan;
 	private CursorManager theCM;
+	private PlayerController thePC;
 
 //	public float respawnTime;
 
@@ -25,14 +26,16 @@ public class PlayerHealthManager : MonoBehaviour {
 
 		sfxMan = FindObjectOfType<SFXManager> ();
 
-
 		theCM = FindObjectOfType<CursorManager> ();
+
+		thePC = FindObjectOfType<PlayerController> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (playerCurrentHealth <= 0) {
 //			gameObject.SetActive (false);
+			thePC.IsDead ();
 			sfxMan.playerDead.Play();
 			theCM.LockSet ();
 			Application.LoadLevel ("Dead");

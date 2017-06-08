@@ -10,6 +10,11 @@ public class PauseGame : MonoBehaviour {
 
 	private CursorManager theCM;
 
+	public Transform pauseMenu;
+	public Transform soundMenu;
+	public Transform videoMenu;
+	public Transform controlMenu;
+
 //	private static bool objectExists;
 
 	// Use this for initialization
@@ -41,6 +46,11 @@ public class PauseGame : MonoBehaviour {
 			canvas.gameObject.SetActive (false);
 			Time.timeScale = 1;
 			move.canMove = true;
+
+			pauseMenu.gameObject.SetActive (true);
+			soundMenu.gameObject.SetActive (false);
+			videoMenu.gameObject.SetActive (false);
+			controlMenu.gameObject.SetActive (false);
 		}
 		theCM.LockSet ();
 	}

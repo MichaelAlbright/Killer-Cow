@@ -120,4 +120,10 @@ public class PlayerController : MonoBehaviour {
 		anim.SetFloat ("LastMoveX", lastMove.x);
 		anim.SetFloat ("LastMoveY", lastMove.y);
 	}
+
+	public void IsDead()
+	{
+		attacking = false;
+		anim.SetBool ("Attack", false);
+	}
 }
