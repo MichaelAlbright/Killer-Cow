@@ -7,8 +7,8 @@ public class MenuButton : MonoBehaviour {
 
 	public Button menuBtn;
 
-	public GameObject menuToOpen;
-	public GameObject menuToClose;
+	public Transform menuToOpen;
+	public Transform menuToClose;
 
 	// Use this for initialization
 	void Start () {
@@ -18,11 +18,11 @@ public class MenuButton : MonoBehaviour {
 	
 	void TaskOnClick()
 	{
-		if (!menuToOpen.activeSelf) {
-			menuToOpen.SetActive (true);
+		if (menuToOpen.gameObject.activeInHierarchy == false) {
+			menuToOpen.gameObject.SetActive (true);
 		}
-		if (menuToClose.activeSelf) {
-			menuToClose.SetActive (false);
+		if (menuToClose.gameObject.activeInHierarchy == true) {
+			menuToClose.gameObject.SetActive (false);
 		}
 	}
 }
