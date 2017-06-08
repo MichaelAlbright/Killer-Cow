@@ -7,6 +7,7 @@ public class SFXManager : MonoBehaviour {
 	public AudioSource playerHurt;
 	public AudioSource playerDead;
 	public AudioSource playerAttack;
+	public AudioSource enemyHurt;
 
 //	private static bool sfxmanExists;
 

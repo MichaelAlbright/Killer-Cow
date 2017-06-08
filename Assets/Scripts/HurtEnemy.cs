@@ -11,10 +11,12 @@ public class HurtEnemy : MonoBehaviour {
 	public GameObject damageNumber;
 
 	private PlayerStats thePS;
+	private SFXManager sfxMan;
 
 	// Use this for initialization
 	void Start () {
 		thePS = FindObjectOfType<PlayerStats> ();
+		sfxMan = FindObjectOfType<SFXManager> ();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +29,8 @@ public class HurtEnemy : MonoBehaviour {
 		if (other.gameObject.tag == "Enemy") {
 //			Destroy (other.gameObject);
 			currentDamage = damageToGive + thePS.currentAttack;
+
+			sfxMan.enemyHurt.Play ();
 
 			other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
 			Instantiate (damageBurst, hitPoint.position, hitPoint.rotation);
