@@ -13,6 +13,10 @@ public class VolumeManager : MonoBehaviour {
 	void Start () {
 		vcObjects = FindObjectsOfType<VolumeController> ();
 
+		if (PlayerPrefs.HasKey ("Volume")) {
+			currentVolumeLevel = PlayerPrefs.GetFloat("Volume");
+		}
+
 		if (currentVolumeLevel > maxVolume) {
 			currentVolumeLevel = maxVolume;
 		}
@@ -26,7 +30,7 @@ public class VolumeManager : MonoBehaviour {
 		}
 	}
 
-	public void ChangeVolume (int newVolume) {
+	public void ChangeVolume (float newVolume) {
 
 		currentVolumeLevel = newVolume;
 
@@ -40,6 +44,13 @@ public class VolumeManager : MonoBehaviour {
 
 		for (int i = 0; i < vcObjects.Length; i++) {
 			vcObjects [i].SetAudioLevel (currentVolumeLevel);
+		}
+
+		if (PlayerPrefs.HasKey ("Volume")) {
+			PlayerPrefs.GetFloat("Volume");
+			PlayerPrefs.SetFloat("Volume", currentVolumeLevel);
+		} else {
+			PlayerPrefs.SetFloat("Volume", currentVolumeLevel);
 		}
 	}
 }
