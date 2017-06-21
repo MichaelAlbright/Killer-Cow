@@ -9,6 +9,9 @@ public class PauseGame : MonoBehaviour {
 	private PlayerController move;
 
 	private CursorManager theCM;
+	private QuestMenu theQMenu;
+
+	public bool closed;
 
 	public Transform pauseMenu;
 	public Transform soundMenu;
@@ -21,6 +24,7 @@ public class PauseGame : MonoBehaviour {
 	void Start () {
 		move = FindObjectOfType<PlayerController> ();
 		theCM = FindObjectOfType<CursorManager> ();
+		theQMenu = FindObjectOfType<QuestMenu> ();
 //		if (!objectExists) {
 //			objectExists = true;
 //			DontDestroyOnLoad (transform.gameObject);
@@ -43,6 +47,7 @@ public class PauseGame : MonoBehaviour {
 			Time.timeScale = 0;
 			move.canMove = false;
 		} else {
+			closed = true;
 			canvas.gameObject.SetActive (false);
 			Time.timeScale = 1;
 			move.canMove = true;
