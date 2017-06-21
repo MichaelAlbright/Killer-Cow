@@ -22,9 +22,32 @@ public class QuestObject : MonoBehaviour {
 	private PlayerStats thePS;
 	public int exp;
 
+	public int saveQuest;
+
 	// Use this for initialization
 	void Start () {
+		
 		thePS = FindObjectOfType<PlayerStats> ();
+		if (PlayerPrefs.HasKey ("SaveQuest" + questNumber)) {
+			saveQuest = PlayerPrefs.GetInt ("SaveQuest" + questNumber);
+		} else {
+			saveQuest = 0;
+		}
+
+		if (saveQuest == 0) {
+			gameObject.SetActive (false);
+		} else if (saveQuest == 1) {
+			gameObject.SetActive (true);
+		} else if (saveQuest == 2) {
+			theQM.questCompleted [questNumber] = true;
+			gameObject.SetActive (false);
+		}
+
+		if (isEnemyQuest) {
+			if (PlayerPrefs.HasKey ("Enemy" + questNumber)) {
+				enemyKillCount = PlayerPrefs.GetInt ("Enemy" + questNumber);
+			}
+		}
 	}
 	
 	// Update is called once per frame
@@ -51,14 +74,50 @@ public class QuestObject : MonoBehaviour {
 
 	public void StartQuest()
 	{
+		saveQuest = 1;
 		theQM.ShowQuestText (startText);
 	}
 
 	public void EndQuest()
 	{
+		saveQuest = 2;
 		theQM.ShowQuestText (endText);
 		theQM.questCompleted [questNumber] = true;
 		thePS.AddExperience (exp);
 		gameObject.SetActive (false);
+	}
+
+	public void RestartQuests()
+	{
+		theQM.questCompleted [questNumber] = false;
+		gameObject.SetActive (false);
+
+		saveQuest = 0;
+
+		if (PlayerPrefs.HasKey ("SaveQuest" + questNumber)) {
+			PlayerPrefs.DeleteKey ("SaveQuest" + questNumber);
+		}
+	}
+
+	public void SaveQuests()
+	{
+		if (PlayerPrefs.HasKey ("SaveQuest" + questNumber)) {
+			PlayerPrefs.GetInt ("SaveQuest" + questNumber);
+			PlayerPrefs.SetInt("SaveQuest" + questNumber, saveQuest);
+		} else {
+			PlayerPrefs.SetInt("SaveQuest" + questNumber, saveQuest);
+		}
+
+		Debug.Log ("save" + questNumber + " is " + PlayerPrefs.GetInt ("SaveQuest" + questNumber));
+		Debug.Log ("saveQuest" + questNumber + " is " + saveQuest);
+
+		if (isEnemyQuest) {
+			if (PlayerPrefs.HasKey ("Enemy" + questNumber)) {
+				PlayerPrefs.GetInt ("Enemy" + questNumber);
+				PlayerPrefs.SetInt ("Enemy" + questNumber, enemyKillCount);
+			} else {
+				PlayerPrefs.SetInt ("Enemy" + questNumber, enemyKillCount);
+			}
+		}
 	}
 }

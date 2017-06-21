@@ -16,6 +16,8 @@ public class SaveGame : MonoBehaviour {
 
 	private PlayerStats thePS;
 
+	private QuestManager theQM;
+
 	void Awake()
 	{
 
@@ -26,6 +28,7 @@ public class SaveGame : MonoBehaviour {
 		theCM = FindObjectOfType<CursorManager> ();
 		theSH = FindObjectOfType<SceneHolder> ();
 		thePS = FindObjectOfType<PlayerStats> ();
+		theQM = FindObjectOfType<QuestManager> ();
 	}
 
 	public void SaveGameSettings(bool Quit)
@@ -48,6 +51,10 @@ public class SaveGame : MonoBehaviour {
 			} else {
 				playerExp = thePS.currentExp;
 				PlayerPrefs.SetInt("PlayerExp", playerExp);
+			}
+
+			for (int i = 0; i < theQM.quests.Length; i++) {
+				theQM.quests [i].SaveQuests ();
 			}
 
 			theCM.LockSet ();

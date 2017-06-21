@@ -18,6 +18,8 @@ public class StartGame : MonoBehaviour {
 
 	private SceneHolder theSH;
 
+	private PlayerHealthManager theHM;
+
 	void Start ()
 	{
 		thePlayer = FindObjectOfType<PlayerController> ();
@@ -25,6 +27,8 @@ public class StartGame : MonoBehaviour {
 		theCM = FindObjectOfType<CursorManager> ();
 
 		theSH = FindObjectOfType<SceneHolder> ();
+
+		theHM = FindObjectOfType<PlayerHealthManager> ();
 
 		Button btn = start.GetComponent<Button> ();
 		btn.onClick.AddListener (TaskOnClick);
@@ -41,6 +45,8 @@ public class StartGame : MonoBehaviour {
 		playerStuff.SetActive (true);
 
 		thePlayer.startPoint = exitPoint;
+
+		theHM.playerCurrentHealth = theHM.playerMaxHealth;
 
 		theCM.LockSet ();
 	}

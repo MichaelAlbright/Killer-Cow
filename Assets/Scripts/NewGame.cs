@@ -21,6 +21,8 @@ public class NewGame : MonoBehaviour {
 
 	private PlayerStats thePS;
 
+	private QuestObject[] theQO;
+
 	void Start ()
 	{
 		thePlayer = FindObjectOfType<PlayerController> ();
@@ -30,6 +32,8 @@ public class NewGame : MonoBehaviour {
 		theSH = FindObjectOfType<SceneHolder> ();
 
 		thePS = FindObjectOfType<PlayerStats> ();
+
+		theQO = FindObjectsOfType<QuestObject> ();
 
 		Button btn = start.GetComponent<Button> ();
 		btn.onClick.AddListener (TaskOnClick);
@@ -47,6 +51,10 @@ public class NewGame : MonoBehaviour {
 
 		thePS.currentExp = 0;
 		thePS.currentLevel = 0;
+
+		for (int i = 0; i < theQO.Length; i++) {
+			theQO [i].RestartQuests ();
+		}
 
 		Application.LoadLevel (sceneToLoad);
 

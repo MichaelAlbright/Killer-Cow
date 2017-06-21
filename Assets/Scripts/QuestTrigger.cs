@@ -11,9 +11,18 @@ public class QuestTrigger : MonoBehaviour {
 	public bool startQuest;
 	public bool endQuest;
 
+//	private QuestObject[] theQO;
+
 	// Use this for initialization
 	void Start () {
-		theQM = FindObjectOfType<QuestManager>();
+		theQM = FindObjectOfType<QuestManager> ();
+//		theQO = FindObjectsOfType<QuestObject> ();
+		if (theQM.quests[questNumber].saveQuest == 1 || theQM.quests[questNumber].saveQuest == 2) {
+			gameObject.SetActive (false);
+		}
+//		if (theQO [questNumber].saveQuest == 1 || theQO [questNumber].saveQuest == 2) {
+//			gameObject.SetActive (false);
+//		}
 	}
 	
 	// Update is called once per frame
@@ -28,9 +37,11 @@ public class QuestTrigger : MonoBehaviour {
 				if (startQuest && !theQM.quests[questNumber].gameObject.activeSelf) {
 					theQM.quests [questNumber].gameObject.SetActive (true);
 					theQM.quests [questNumber].StartQuest ();
+					theQM.quests [questNumber].saveQuest = 1;
 				}
 				if (endQuest && theQM.quests [questNumber].gameObject.activeSelf) {
 					theQM.quests [questNumber].EndQuest ();
+					theQM.quests [questNumber].saveQuest = 2;
 				}
 			}
 		}
