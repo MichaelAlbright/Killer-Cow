@@ -56,7 +56,7 @@ public class QuestMenu : MonoBehaviour {
 		y = 0;
 		int f = 0;
 		for (int i = 0; i < theQM.quests.Length; i++) {
-			if (theQM.quests [i].gameObject.activeInHierarchy) {
+			if (theQM.quests [i].saveQuest == 1) {
 				y++;
 				float yDir = buttons[f].transform.position.y - 30;
 				f = i;

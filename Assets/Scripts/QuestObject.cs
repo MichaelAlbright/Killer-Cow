@@ -34,6 +34,26 @@ public class QuestObject : MonoBehaviour {
 			saveQuest = 0;
 		}
 
+//		if (saveQuest == 0) {
+//			gameObject.SetActive (false);
+//		} else if (saveQuest == 1) {
+//			gameObject.SetActive (true);
+//		} else if (saveQuest == 2) {
+//			theQM.questCompleted [questNumber] = true;
+//			gameObject.SetActive (false);
+//		}
+
+		if (isEnemyQuest) {
+			if (PlayerPrefs.HasKey ("Enemy" + questNumber)) {
+				enemyKillCount = PlayerPrefs.GetInt ("Enemy" + questNumber);
+			} else {
+				enemyKillCount = 0;
+			}
+		}
+	}
+	
+	// Update is called once per frame
+	void Update () {
 		if (saveQuest == 0) {
 			gameObject.SetActive (false);
 		} else if (saveQuest == 1) {
@@ -43,15 +63,6 @@ public class QuestObject : MonoBehaviour {
 			gameObject.SetActive (false);
 		}
 
-		if (isEnemyQuest) {
-			if (PlayerPrefs.HasKey ("Enemy" + questNumber)) {
-				enemyKillCount = PlayerPrefs.GetInt ("Enemy" + questNumber);
-			}
-		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
 		if (isItemQuest) {
 			if (theQM.itemCollected == targetItem) {
 				theQM.itemCollected = null;
@@ -96,6 +107,10 @@ public class QuestObject : MonoBehaviour {
 
 		if (PlayerPrefs.HasKey ("SaveQuest" + questNumber)) {
 			PlayerPrefs.DeleteKey ("SaveQuest" + questNumber);
+		}
+		if (PlayerPrefs.HasKey ("Enemy" + questNumber)) {
+			PlayerPrefs.DeleteKey ("Enemy" + questNumber);
+			enemyKillCount = 0;
 		}
 	}
 
