@@ -16,7 +16,7 @@ public class MenuButton : MonoBehaviour {
 		btn.onClick.AddListener (TaskOnClick);
 	}
 	
-	void TaskOnClick()
+	public void TaskOnClick()
 	{
 		if (menuToOpen.gameObject.activeInHierarchy == false) {
 			menuToOpen.gameObject.SetActive (true);

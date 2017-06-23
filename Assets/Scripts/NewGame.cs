@@ -54,6 +54,7 @@ public class NewGame : MonoBehaviour {
 
 		for (int i = 0; i < theQO.Length; i++) {
 			theQO [i].RestartQuests ();
+
 		}
 
 		Application.LoadLevel (sceneToLoad);

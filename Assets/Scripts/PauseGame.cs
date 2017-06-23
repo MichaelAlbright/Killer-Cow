@@ -36,6 +36,7 @@ public class PauseGame : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown ("Cancel")) {
+//			closed = true;
 			PauseG ();
 		}
 	}
@@ -46,8 +47,12 @@ public class PauseGame : MonoBehaviour {
 			canvas.gameObject.SetActive (true);
 			Time.timeScale = 0;
 			move.canMove = false;
+
+			pauseMenu.gameObject.SetActive (true);
+			soundMenu.gameObject.SetActive (false);
+			videoMenu.gameObject.SetActive (false);
+			controlMenu.gameObject.SetActive (false);
 		} else {
-			closed = true;
 			canvas.gameObject.SetActive (false);
 			Time.timeScale = 1;
 			move.canMove = true;

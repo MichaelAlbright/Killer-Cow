@@ -105,13 +105,14 @@ public class QuestObject : MonoBehaviour {
 
 		saveQuest = 0;
 
-		if (PlayerPrefs.HasKey ("SaveQuest" + questNumber)) {
-			PlayerPrefs.DeleteKey ("SaveQuest" + questNumber);
-		}
-		if (PlayerPrefs.HasKey ("Enemy" + questNumber)) {
+		PlayerPrefs.DeleteKey ("SaveQuest" + questNumber);
+
+		if (isEnemyQuest) {
 			PlayerPrefs.DeleteKey ("Enemy" + questNumber);
 			enemyKillCount = 0;
 		}
+		Debug.Log ("quest restart" + questNumber);
+		Debug.Log ("enemy kill count for " + questNumber + " " + enemyKillCount);
 	}
 
 	public void SaveQuests()
