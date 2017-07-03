@@ -17,8 +17,10 @@ public class QuestTrigger : MonoBehaviour {
 	void Start () {
 		theQM = FindObjectOfType<QuestManager> ();
 //		theQO = FindObjectsOfType<QuestObject> ();
-		if (theQM.quests[questNumber].saveQuest == 1 || theQM.quests[questNumber].saveQuest == 2) {
-			gameObject.SetActive (false);
+		if (startQuest) {
+			if (theQM.quests [questNumber].saveQuest == 1 || theQM.quests [questNumber].saveQuest == 2) {
+				gameObject.SetActive (false);
+			}
 		}
 //		if (theQO [questNumber].saveQuest == 1 || theQO [questNumber].saveQuest == 2) {
 //			gameObject.SetActive (false);

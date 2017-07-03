@@ -7,7 +7,7 @@ public class PlayerHealthManager : MonoBehaviour {
 	public int playerMaxHealth;
 	public int playerCurrentHealth;
 
-	private bool flashActive;
+	public bool flashActive;
 	public float flashLength;
 	private float flashCounter;
 	private SpriteRenderer playerSprite;
@@ -15,6 +15,7 @@ public class PlayerHealthManager : MonoBehaviour {
 	private SFXManager sfxMan;
 	private CursorManager theCM;
 	private PlayerController thePC;
+	private EnemyDirection[] theED;
 
 //	public float respawnTime;
 
@@ -29,6 +30,8 @@ public class PlayerHealthManager : MonoBehaviour {
 		theCM = FindObjectOfType<CursorManager> ();
 
 		thePC = FindObjectOfType<PlayerController> ();
+
+		theED = FindObjectsOfType<EnemyDirection> ();
 	}
 	
 	// Update is called once per frame
@@ -44,12 +47,16 @@ public class PlayerHealthManager : MonoBehaviour {
 
 		}
 		if (flashActive) {
+			thePC.PlayerHurtMove ();
 			if (flashCounter > flashLength * .66f) {
 				playerSprite.color = new Color (playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 0f);
 			} else if (flashCounter > flashLength * .33f) {
 				playerSprite.color = new Color (playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 1f);
 			} else if (flashCounter > 0) {
 				playerSprite.color = new Color (playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 0f);
+				for (int i = 0; i < theED.Length; i++) {
+					theED [i].enemyInArea = false;
+				}
 			} else {
 				playerSprite.color = new Color (playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 1f);
 				flashActive = false;

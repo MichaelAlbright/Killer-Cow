@@ -26,12 +26,14 @@ public class PlayerController : MonoBehaviour {
 	public bool canMove;
 
 	private SFXManager sfxMan;
+	private EnemyDirection[] theED;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		myRigidbody = GetComponent<Rigidbody2D> ();
 		sfxMan = FindObjectOfType<SFXManager> ();
+		theED = FindObjectsOfType<EnemyDirection> ();
 
 //		if (!playerExists) {
 //			playerExists = true;
@@ -125,5 +127,23 @@ public class PlayerController : MonoBehaviour {
 	{
 		attacking = false;
 		anim.SetBool ("Attack", false);
+	}
+
+	public void PlayerHurtMove()
+	{
+		int directionX = 0;
+		int directionY = 0;
+		canMove = false;
+		for (int i = 0; i < theED.Length; i++) {
+			if (theED [i].enemyInArea) {
+				if (theED [i].isX) {
+					directionX = theED [i].playerDirectionX;
+				} else if (theED [i].isY) {
+					directionY = theED [i].playerDirectionY;
+				}
+			}
+		}
+		myRigidbody.velocity = new Vector2 (directionX * moveSpeed, directionY * moveSpeed);
+		canMove = true;
 	}
 }
