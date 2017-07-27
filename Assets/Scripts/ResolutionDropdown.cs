@@ -11,6 +11,9 @@ public class ResolutionDropdown : MonoBehaviour {
 	public Dropdown drop;
 	public Toggle tfs;
 
+	public int height;
+	public int width;
+
 	// Use this for initialization
 	void Start () {
 		int startRes;
@@ -49,18 +52,26 @@ public class ResolutionDropdown : MonoBehaviour {
 		if (input == 0) {
 			Screen.SetResolution (1200, 900, isFullscreen);
 			Debug.Log ("option is " + input);
+			height = 4;
+			width = 3;
 		}
 		if (input == 1) {
 			Screen.SetResolution (1500, 1200, isFullscreen);
 			Debug.Log ("option is " + input);
+			height = 5;
+			width = 3;
 		}
 		if (input == 2) {
 			Screen.SetResolution (1600, 1000, isFullscreen);
 			Debug.Log ("option is " + input);
+			height = 16;
+			width = 10;
 		}
 		if (input == 3) {
 			Screen.SetResolution (1600, 900, isFullscreen);
 			Debug.Log ("option is " + input);
+			height = 16;
+			width = 9;
 		}
 		if (PlayerPrefs.HasKey ("Resolution")) {
 			PlayerPrefs.GetInt("Resolution");

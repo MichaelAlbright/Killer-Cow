@@ -28,6 +28,18 @@ public class VillagerMovement : MonoBehaviour {
 	public bool tutorialNPC;
 	private bool tutorialNPCEnd;
 
+	public bool questNPC;
+	private bool activateQuestTrigger;
+
+	private QuestManager theQM;
+
+	public int questNumber;
+
+	public bool startQuest;
+	public bool endQuest;
+
+	public GameObject questMarker;
+
 	// Use this for initialization
 	void Start () {
 		myRigidbody = GetComponent<Rigidbody2D> ();
@@ -67,6 +79,20 @@ public class VillagerMovement : MonoBehaviour {
 		if (tutorialNPCEnd && tutorialNPC) {
 			tutorialNPC = false;
 			walkDirection = 0;
+		}
+
+		if (!theDM.dialogueActive && questNPC) {
+			questMarker.SetActive (true);
+		}
+
+		if (theDM.dialogueActive && questNPC) {
+			activateQuestTrigger = true;
+			StartQuest ();
+		}
+
+		if (activateQuestTrigger && questNPC) {
+			questNPC = false;
+			questMarker.SetActive (false);
 		}
 
 		if (!canMove) {
@@ -128,5 +154,20 @@ public class VillagerMovement : MonoBehaviour {
 		walkDirection = Random.Range (0, 4);
 		isWalking = true;
 		walkCounter = walkTime;
+	}
+
+	public void StartQuest()
+	{
+		if (!theQM.questCompleted [questNumber]) {
+			if (startQuest && !theQM.quests[questNumber].gameObject.activeSelf) {
+				theQM.quests [questNumber].gameObject.SetActive (true);
+				theQM.quests [questNumber].StartQuest ();
+				theQM.quests [questNumber].saveQuest = 1;
+			}
+			if (endQuest && theQM.quests [questNumber].gameObject.activeSelf) {
+				theQM.quests [questNumber].EndQuest ();
+				theQM.quests [questNumber].saveQuest = 2;
+			}
+		}
 	}
 }

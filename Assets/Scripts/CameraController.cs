@@ -18,6 +18,8 @@ public class CameraController : MonoBehaviour {
 	private float halfHeight;
 	private float halfWidth;
 
+//	public ResolutionDropdown theRD;
+
 	// Use this for initialization
 	void Start () {
 //		if (!cameraExists) {
@@ -63,5 +65,14 @@ public class CameraController : MonoBehaviour {
 
 		minBounds = boundBox.bounds.min;
 		maxBounds = boundBox.bounds.max;
+	}
+
+	public void NewResolution()
+	{
+		theCamera = GetComponent<Camera> ();
+		halfHeight = theCamera.orthographicSize;
+		halfWidth = halfHeight * Screen.width / Screen.height;
+//		halfHeight = theRD.height / 2;
+//		halfWidth = theRD.width / 2;
 	}
 }

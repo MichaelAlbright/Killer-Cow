@@ -13,14 +13,21 @@ public class QuestItem : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		theQM = FindObjectOfType<QuestManager> ();
-		if (theQM.questCompleted [questNumber]) {
-			gameObject.SetActive (false);
-		}
+//		if (theQM.questCompleted [questNumber]) {
+//			gameObject.SetActive (false);
+////		}
+//		if (theQM.quests [questNumber].saveQuest != 1) {
+//			gameObject.SetActive (false);
+//		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (theQM.quests [questNumber].saveQuest != 1) {
+			gameObject.SetActive (false);
+		} else {
+			gameObject.SetActive (true);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
